@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/contacttxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:padding="18dp"
+            android:text="Contact"
+            android:textSize="25sp"
+            android:textStyle="normal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black" />
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="Name"
+            android:background="@drawable/edittext_bkg"
+            android:fontFamily="sans-serif-black"
+            android:hint="Your Name"
+
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/email1"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="email"
+            android:background="@drawable/edittext_bkg"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:hint="Your Email"
+            android:textAlignment="viewStart"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/phone1"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="phone"
+            android:background="@drawable/edittext_bkg"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:hint="Your Phone"
+            android:textAlignment="viewStart"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/sub"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="subject"
+            android:background="@drawable/edittext_bkg"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:hint=" -> Subject"
+            android:textAlignment="viewStart"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/msg"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="message"
+            android:background="@drawable/edittext_bkg"
+            android:hint="Message.."
+            android:textAlignment="viewStart"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/Sendbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="Submit"
+            android:background="@drawable/edittext_bkg"
+            android:hint="Send"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart" />
+
+        <ImageView
+            android:layout_width="1000dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="-300dp"
+            android:src="@drawable/bg"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>
