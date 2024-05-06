@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ADD8E6"
-    tools:context=".view.RegisterFragment"> <!-- Light blue background color -->
+    tools:context=".view.RegisterFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                     android:padding="8dp"
                     android:hint="username"
                     android:inputType="textPassword"
-                    android:drawableLeft="@drawable/password"
+                    android:drawableLeft="@drawable/username"
                     android:drawablePadding="8dp"
                     android:background="@drawable/edittext_bkg"/>
                 <EditText
@@ -61,7 +61,7 @@
                     android:drawableLeft="@drawable/email"
                     android:drawablePadding="8dp"
                     android:background="@drawable/edittext_bkg"/>
-                    <EditText
+                <EditText
                     android:layout_width="300dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
@@ -94,7 +94,7 @@
                     android:id="@+id/signup_button"
                     android:textSize="18sp"
                     android:text="SignUp"
-                    android:background="#ADD8E6" />
+                    android:background="@color/black" />
             </LinearLayout>
 
         </LinearLayout>

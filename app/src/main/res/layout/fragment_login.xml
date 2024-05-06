@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="#ADD8E6"
     tools:context=".view.LoginFragment">
-    <!-- Light blue background color -->
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

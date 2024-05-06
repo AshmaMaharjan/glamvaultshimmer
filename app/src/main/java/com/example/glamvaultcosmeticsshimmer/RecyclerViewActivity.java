@@ -1,23 +1,21 @@
 package com.example.glamvaultcosmeticsshimmer;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.example.glamvaultcosmeticsshimmer.model.ProductGla;
 import com.example.glamvaultcosmeticsshimmer.utilities.ApiCallBack;
 import com.example.glamvaultcosmeticsshimmer.utilities.ApiClient;
 import com.example.glamvaultcosmeticsshimmer.view.adapter.PostAdapter;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private ArrayList<ProductGla> products = new ArrayList<>();
+public class RecyclerViewActivity extends AppCompatActivity {
     private PostAdapter adapter;
+    private ArrayList<ProductGla> products = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

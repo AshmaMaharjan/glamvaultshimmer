@@ -6,10 +6,12 @@ import android.widget.Toast;
 
 
 import com.example.glamvaultcosmeticsshimmer.model.LogUser;
+import com.example.glamvaultcosmeticsshimmer.model.ProductGla;
 import com.example.glamvaultcosmeticsshimmer.model.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,8 +23,8 @@ public class ApiClient {
 
 //    private static final String BASE_URL = "http://192.168.137.210/api/";
 
-    private static final String BASE_URL = "http://100.64.222.6/api/";
-//    private static final String BASE_URL = "http://localhost/api/";
+
+   private static final String BASE_URL = "http://10.0.2.2/glamvault/";
 
     private static Retrofit retrofit;
 
@@ -121,6 +123,34 @@ public class ApiClient {
             }
         });
     }
+    public void getProducts(ApiCallBack callback) {
+        Call<List<ProductGla>> call = createApiService().getProducts();
+        call.enqueue(new Callback<List<ProductGla>>() {
+            @Override
+            public void onResponse(Call<List<ProductGla>> call, Response<List<ProductGla>> response) {
+                if (response.isSuccessful()) {
+                    List<ProductGla> productList = response.body();
+                    if (productList != null) {
+                        for (ProductGla product : productList) {
+                            Log.d("Product", "Name: " + product.getProductName() + ", Price: " + product.getProductPrice() + ", Image: " + product.getImage());
+                        }
+                        callback.onSuccess(new ArrayList<>(productList));
+                    } else {
+                        Log.e("Product", "Response body is null");
+                        callback.onFailure("Failed to get products. Response body is null.");
+                    }
+                } else {
+                    Log.e("Product", "Failed to get products. Response code: " + response.code());
+                    callback.onFailure("Failed to get products. Response code: " + response.code());
+                }
+            }
 
+
+            @Override
+            public void onFailure(Call<List<ProductGla>> call, Throwable t) {
+                callback.onFailure("Failed to get products: " + t.getMessage());
+            }
+        });
+    }
 }
 
