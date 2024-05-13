@@ -3,20 +3,20 @@ package com.example.glamvaultcosmeticsshimmer.view.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.glamvaultcosmeticsshimmer.ProductGlam;
+
 import com.example.glamvaultcosmeticsshimmer.R;
 import com.example.glamvaultcosmeticsshimmer.model.ProductGla;
+import com.example.glamvaultcosmeticsshimmer.view.ProductViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class PostAdapter extends RecyclerView.Adapter<ProductGlam> {
+public class PostAdapter extends RecyclerView.Adapter<ProductViewHolder> {
     private ArrayList<ProductGla> products;
 
     public PostAdapter(ArrayList<ProductGla> products) {
@@ -25,15 +25,13 @@ public class PostAdapter extends RecyclerView.Adapter<ProductGlam> {
 
     @NonNull
     @Override
-    public ProductGlam onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder, parent, false);
-        return new ProductGlam(view);
+    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_makeup, parent, false);
+        return new ProductViewHolder(view);
     }
 
-
-
     @Override
-    public void onBindViewHolder(@NonNull ProductGlam holder, int position) {
+    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         ProductGla product = products.get(position);
         holder.textViewName.setText(product.getProductName());
         holder.textViewPrice.setText(product.getProductPrice());
@@ -45,8 +43,12 @@ public class PostAdapter extends RecyclerView.Adapter<ProductGlam> {
                 .load(product.getImage())
                 .placeholder(placeholderResource)
                 .error(errorResource)
-                .into(holder.imgView);
+                .into(holder.imageView);
     }
+
+
+
+
 
     @Override
     public int getItemCount() {
@@ -54,16 +56,5 @@ public class PostAdapter extends RecyclerView.Adapter<ProductGlam> {
     }
 
     // ViewHolder class
-    static class ProductViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView textViewName;
-        TextView textViewPrice;
 
-        ProductViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.imageView);
-            textViewName = itemView.findViewById(R.id.textViewName);
-            textViewPrice = itemView.findViewById(R.id.textViewPrice);
-        }
-    }
 }

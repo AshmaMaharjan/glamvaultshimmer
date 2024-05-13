@@ -1,4 +1,4 @@
-package com.example.glamvaultcosmeticsshimmer;
+package com.example.glamvaultcosmeticsshimmer.view;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -9,16 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.glamvaultcosmeticsshimmer.R;
 
-public class ProductGlam extends RecyclerView.ViewHolder {
+public class ProductViewHolder extends RecyclerView.ViewHolder {
+
+    public ImageView imageView;
     public TextView textViewName;
-    public TextView textViewPrice;
+   public TextView textViewPrice;
 
-    public ImageView imgView;
-
-    public ProductGlam(@NonNull View itemView) {
+    public ProductViewHolder(@NonNull View itemView) {
         super(itemView);
+        imageView = itemView.findViewById(R.id.imageView);
         textViewName = itemView.findViewById(R.id.textViewName);
         textViewPrice = itemView.findViewById(R.id.textViewPrice);
-        imgView = itemView.findViewById(R.id.imageView);
     }
 }

@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.example.glamvaultcosmeticsshimmer.model.LogUser;
 import com.example.glamvaultcosmeticsshimmer.model.ProductGla;
 import com.example.glamvaultcosmeticsshimmer.model.User;
+import com.example.glamvaultcosmeticsshimmer.model.Usercontact;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class ApiClient {
 //    private static final String BASE_URL = "http://192.168.137.210/api/";
 
 
-   private static final String BASE_URL = "http://10.0.2.2/glamvault/";
+   private static final String BASE_URL = "http://192.168.137.143/glamvault/";
 
     private static Retrofit retrofit;
 
@@ -149,6 +150,41 @@ public class ApiClient {
             @Override
             public void onFailure(Call<List<ProductGla>> call, Throwable t) {
                 callback.onFailure("Failed to get products: " + t.getMessage());
+            }
+        });
+    }
+    public static void contactUser(Usercontact contact, Context context) {
+
+        ApiService apiService = createApiService();
+        apiService.Usercontact(contact).enqueue(new Callback<Object>() {
+
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                if (response.isSuccessful()) {
+                    // Registration successful
+                    Log.d("ApiClient", "User conatc successful");
+                    Toast.makeText(context, "User registered successfully", Toast.LENGTH_SHORT).show();
+                    // Optionally, you can navigate to another activity upon successful registration
+                    // startActivity(new Intent(context, MainActivity.class));
+                } else {
+                    // Registration failed
+                    Log.d("ApiClient", "Failed to register user. Response code: " + response.code() + response.raw().request());
+                    Toast.makeText(context, "Failed to register user. Please try again later.", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                // Registration failed due to network error or other issues
+                Log.e("ApiClient", "Registration failed: " + t.getMessage());
+                String errorMessage;
+                if (t instanceof IOException) {
+                    errorMessage = "Network error. Please check your internet connection.";
+                } else {
+                    errorMessage = "Failed to register user. Error: " + t.getMessage();
+                }
+                // Display error message to the user
+                Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "112501818446",
+    "project_id": "glamvault-cosmetic-shimmer",
+    "storage_bucket": "glamvault-cosmetic-shimmer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112501818446:android:e9609f3b8f5ac72a832f1f",
+        "android_client_info": {
+          "package_name": "com.example.glamvaultcosmeticsshimmer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg9g-hX61gV6XfRF_NGpNoH2e_0yYdQ1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -23,11 +23,6 @@
             android:textStyle="normal"
             />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/black"
-            />
 
 
 
@@ -66,23 +61,14 @@
             />
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="170dp"
-            android:fontFamily="sans-serif-black"
-            android:layout_marginTop="-160dp"
-            android:text="BSc(Hons) Mobile Application Development"
-            android:textAlignment="center"
-            android:textSize="15sp"
 
-            />
         <ImageView
             android:id="@+id/female"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
+            android:layout_width="36dp"
+            android:layout_height="41dp"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="-150dp"
+            android:layout_marginTop="-130dp"
+            android:src="@drawable/username"
 
             />
         <TextView
@@ -92,7 +78,7 @@
             android:fontFamily="sans-serif-black"
             android:layout_marginTop="-35dp"
             android:text="Female"
-            android:layout_marginStart="115dp"
+            android:layout_marginStart="119dp"
             android:textAlignment="center"
             android:textSize="17sp"
             />
@@ -101,7 +87,8 @@
             android:layout_width="36dp"
             android:layout_height="41dp"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="-150dp"
+            android:layout_marginTop="-140dp"
+            android:src="@drawable/mail"
 
           />
 
@@ -120,8 +107,8 @@
             android:layout_width="36dp"
             android:layout_height="41dp"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="10dp"
-
+            android:layout_marginTop="30dp"
+            android:src="@drawable/home"
            />
 
         <TextView
@@ -129,7 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="115dp"
-            android:layout_marginTop="-35dp"
+            android:layout_marginTop="-33dp"
             android:layout_marginBottom="-100dp"
             android:fontFamily="sans-serif-black"
             android:text="Chakupat, Lalitpur"
@@ -138,10 +125,11 @@
 
         <ImageView
             android:id="@+id/phone"
-            android:layout_width="36dp"
-            android:layout_height="41dp"
+            android:layout_width="38dp"
+            android:layout_height="31dp"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="135dp"
+            android:src="@drawable/call"
             />
 
         <TextView
@@ -150,8 +138,8 @@
             android:layout_marginBottom="-2000dp"
             android:fontFamily="sans-serif-black"
             android:layout_marginStart="115dp"
-            android:layout_marginTop="-35dp"
-            android:text="9863021107"
+            android:layout_marginTop="-24dp"
+            android:text="9863021100"
             android:textAlignment="center"
             android:textSize="17sp" />
 
@@ -177,38 +165,5 @@
             android:paddingEnd="6dp"
           />
 
-
-
-
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/app"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="630dp"
-        android:gravity="center">
-
-        <!-- Facebook Icon -->
-        <ImageView
-            android:id="@+id/fb"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-
-            android:layout_margin="16dp"
-            android:clickable="true"
-            />
-
-        <!-- Instagram Icon -->
-        <ImageView
-            android:id="@+id/insta"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-
-            android:layout_margin="16dp"
-            android:clickable="true"
-            />
-
-    </LinearLayout>
-
 </FrameLayout>

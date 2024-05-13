@@ -1,5 +1,6 @@
 package com.example.glamvaultcosmeticsshimmer.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,6 +20,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,14 +59,28 @@ public class RegisterFragment extends AppCompatActivity {
 
             if (fullName.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(RegisterFragment.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-            } else {
+            } else if (!isFullnameValid(fullName)) {
+                Toast.makeText(RegisterFragment.this, "Full Name cannot contain symbols", Toast.LENGTH_SHORT).show();
+            } else if (!isUsernameValid(username)) {
+                Toast.makeText(RegisterFragment.this, "Username cannot contain symbols", Toast.LENGTH_SHORT).show();
+            }   else {
                 User user = new User(fullName, username, email, password);
                 System.out.println(user.getFullName());
                 registerUser(user);
             }
         });
     }
+    private boolean isFullnameValid(String fullName) {
+        // Regular expression to check if full name contains only letters, spaces, and hyphens
+        String regex = "^[a-zA-Z\\s-]*$";
+        return fullName.matches(regex);
+    }
 
+    private boolean isUsernameValid(String username) {
+        // Regular expression to check if username contains only letters, digits, and underscores
+        String regex = "^[a-zA-Z0-9_]*$";
+        return username.matches(regex);
+    }
     private void registerUser(User user) {
         ApiClient.registerUser(user, this);
     }

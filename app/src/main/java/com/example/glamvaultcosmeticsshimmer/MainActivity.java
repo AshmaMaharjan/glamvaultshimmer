@@ -11,37 +11,54 @@ import android.view.MenuItem;
 import com.example.glamvaultcosmeticsshimmer.model.ProductGla;
 import com.example.glamvaultcosmeticsshimmer.utilities.ApiCallBack;
 import com.example.glamvaultcosmeticsshimmer.utilities.ApiClient;
+import com.example.glamvaultcosmeticsshimmer.view.AboutUsFragment;
+import com.example.glamvaultcosmeticsshimmer.view.ContactFragment;
+import com.example.glamvaultcosmeticsshimmer.view.HomeFragment;
+import com.example.glamvaultcosmeticsshimmer.view.MakeupFragment;
+import com.example.glamvaultcosmeticsshimmer.view.ProfileFragment;
 import com.example.glamvaultcosmeticsshimmer.view.adapter.PostAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.FirebaseApp;
+
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private ArrayList<ProductGla> products = new ArrayList<>();
-    private PostAdapter adapter;
-
+public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+    BottomNavigationView bottomNavigationView;
+    HomeFragment homeFragment = new HomeFragment();
+        ProfileFragment profileFragment = new ProfileFragment();
+    MakeupFragment productFragment = new MakeupFragment();
+    AboutUsFragment aboutusFragment = new AboutUsFragment();
+    ContactFragment contactFragment = new ContactFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recycler_activity);
-
-        RecyclerView recyclerView = findViewById(R.id.rvPosts);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new PostAdapter(products);
-        recyclerView.setAdapter(adapter);
-
-        ApiClient apiClient = new ApiClient();
-        apiClient.getProducts(new ApiCallBack() {
-            @Override
-            public void onSuccess(ArrayList<ProductGla> productList) {
-                products.clear();
-                products.addAll(productList);
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onFailure(String message) {
-                // Handle failure
-            }
-        });
+//        setContentView(R.layout.fragment_home_screen);
+        setContentView(R.layout.activity_main);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+    }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.home) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+            return true;
+//
+        }else if(item.getItemId() == R.id.profile){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
+            return true;
+        }else if(item.getItemId() == R.id.product){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, productFragment).commit();
+            return true;
+      }else if(item.getItemId() == R.id.aboutus){
+          getSupportFragmentManager().beginTransaction().replace(R.id.container, aboutusFragment).commit();
+        return true;
+        }else if(item.getItemId() == R.id.contact) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, contactFragment).commit();
+            return true;
+        } else {
+            return false;
+        }
     }
 }

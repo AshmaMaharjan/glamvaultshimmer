@@ -1,9 +1,11 @@
 package com.example.glamvaultcosmeticsshimmer.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +26,12 @@ public class LoginFragment extends AppCompatActivity {
         usernameEditText = findViewById(R.id.loginemail);
         passwordEditText = findViewById(R.id.loginpassword);
         loginButton = findViewById(R.id.loginbutton);
-
+        TextView signupText = findViewById(R.id.signup);
+        signupText.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginFragment.this, RegisterFragment.class);
+            startActivity(intent);
+            finish(); // Optional, to close the current activity
+        });
         loginButton.setOnClickListener(v -> {
             String username = usernameEditText.getText().toString();
             String password = passwordEditText.getText().toString();

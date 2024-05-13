@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AboutUsFragment">
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Title "About Us" -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/about_us_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
 
-</FrameLayout>
+    <!-- Information about Makeup -->
+
+    <TextView
+        android:id="@+id/makeup_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GlamVault Cosmetic Shimmer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/about_us_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to our GlamVault, where beauty meets convenience!"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="108dp"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We're your one-stop destination for all things makeup, skincare, and beauty essentials. Founded with a passion for empowering individuals to express their unique beauty, we strive to curate a diverse range of products to cater to every skin tone, style, and personality."
+        android:textSize="16sp"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"/>
+    <View
+        android:id="@+id/break_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_below="@id/description"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Second Part of Description -->
+    <TextView
+        android:id="@+id/second_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Our journey began with a simple belief: that beauty should be inclusive, accessible, and fun for everyone. Whether you're a makeup aficionado experimenting with the latest trends or a beauty enthusiast exploring skincare routines, we're here to support your journey to self-expression and confidence."
+        android:textSize="16sp"
+        android:layout_below="@id/break_line"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+    <!-- Pictures -->
+    <LinearLayout
+        android:id="@+id/pictures_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_marginTop="450dp">
+
+        <!-- Picture 1 -->
+        <ImageView
+            android:id="@+id/picture1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            android:src="@drawable/foundation"
+            android:scaleType="centerCrop"/>
+
+        <!-- Picture 2 -->
+        <ImageView
+            android:id="@+id/picture2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            android:src="@drawable/f"
+            android:scaleType="centerCrop"/>
+    </LinearLayout>
+</RelativeLayout>

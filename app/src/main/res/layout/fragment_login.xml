@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ADD8E6"
+    android:background="#FFD1DC"
     tools:context=".view.LoginFragment">
 
 
@@ -32,7 +32,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:src="@drawable/lo" />
+                    android:src="@drawable/logg" />
 
                 <EditText
                     android:id="@+id/loginemail"
@@ -41,9 +41,9 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/edittext_bkg"
-                    android:drawableLeft="@drawable/email"
+                    android:drawableLeft="@drawable/username"
                     android:drawablePadding="8dp"
-                    android:hint="Email"
+                    android:hint="Username"
                     android:padding="8dp" />
 
                 <EditText

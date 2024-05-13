@@ -3,6 +3,7 @@ package com.example.glamvaultcosmeticsshimmer.utilities;
 import com.example.glamvaultcosmeticsshimmer.model.LogUser;
 import com.example.glamvaultcosmeticsshimmer.model.ProductGla;
 import com.example.glamvaultcosmeticsshimmer.model.User;
+import com.example.glamvaultcosmeticsshimmer.model.Usercontact;
 
 
 import java.util.List;
@@ -21,4 +22,7 @@ public interface ApiService {
     Call<Object> registerUser(@Body User user);
     @GET("productGlam.php")
     Call<List<ProductGla>> getProducts();
+
+    @POST("contact_user.php")
+    Call<Object> Usercontact(@Body Usercontact contact);
 }
